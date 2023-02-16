@@ -1,0 +1,11 @@
+App
+  -> NavBar
+  -> Header
+    -> Home
+    -> Appointments
+     -> AppointmentCard
+    -> Barbers
+     -> BarberProfile
+    -> Hairstyles
+     -> HairstyleDesc
+    -> Form
