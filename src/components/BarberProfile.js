@@ -3,9 +3,10 @@ import React from 'react';
 function BarberProfile({ barber }) {
   
   return (
-    <tr>
-      <td>{barber.name}</td>
-    </tr>
+    <td className="BarbersChild">
+        <img src={barber.picture} alt={barber.name} />
+        <p>{barber.name}</p>
+    </td>
   )
 }
 

@@ -1,5 +1,10 @@
+/* App CSS */
 .App {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   text-align: center;
+  color: rgb(50, 50, 50);
 }
 
 .App-logo {
@@ -14,29 +19,212 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+.NavBarParent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  padding: 5px;
 }
 
-table {
-  text-align: center;
+.NavBarChild {
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: double;
+  border-color: rgb(211, 34, 5);
+  padding: 4px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.HomeParent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+}
+
+.HomeChild {
+  border: 0px;
+}
+
+div h3 {
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+}
+
+.ApptsParent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+  padding: 5px;
+  table-layout: fixed;
+}
+
+.ApptsChild {
+  border: 5px;
+  border-spacing: 4px;
+  /* font-size: 16px; */
+  padding: 4px;
+}
+
+.ClientsParent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+  padding: 5px;
+}
+
+.ClientsChild {
+  border: 5px;
+  /* border-style: double;
+  border-color: black; */
+  font-size: 16px;
+  padding: 4px;
+}
+
+.tablecenter {
+  margin: auto;
+}
+
+.BarbersParent {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(211, 34, 5);
+  padding: 5px;
+}
+
+.BarbersChild {
+  /* background-color: rgb(185, 185, 160); */
+  border: 2px;
+  border-style: solid;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.HairstylesParent {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  background-color: rgb(230, 230, 200);
+  margin: auto;
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(211, 34, 5);
+  padding: 5px;
+  table-layout: fixed;
+  width: 1200px;
+}
+
+/* .HairstylesChild {
+  border: 4px;
+  border-style: double;
+  border-color: black;
+  font-size: 16px;
+  padding: 4px;
+} */
+
+.tableheader {
+  border: 2px;
+  border-style: solid;
+}
+
+.tabledata {
+  border: 2px;
+  border-style: solid;
+}
+
+.FormParent {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgb(230, 230, 200);
+  border: 5px;
+  border-style: solid none;
+  border-color: rgb(211, 34, 5);
+  padding: 5px;
+}
+
+.FormChild {
+  /* background-color: rgb(185, 185, 160); */
+  border: 5px;
+  /* border-style: double;
+  border-color: black; */
+  font-size: 16px;
+  padding: 4px;
+}
+
+.FormDeleteButton {
+  color: rgb(200, 0, 0)
+}
+
+.FormChangeButton {
+  color: rgb(0, 0, 200)
+}
+
+.FormSubmitButton {
+  color: rgb(0, 0, 0)
 }

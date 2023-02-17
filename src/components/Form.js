@@ -9,7 +9,6 @@ function Form({ onSubmit, barbers, hairstyles }) {
     hairstyle: "",
     datetime: ""
   }
-  // how to handle a new client w/ id and appointment at the same time?
 
   const [form, setForm] = useState(initialForm);
 
@@ -54,9 +53,10 @@ function Form({ onSubmit, barbers, hairstyles }) {
     
   return (
     <div>
-      <h3><strong>Schedule a new appointment:</strong></h3>
-      <form onSubmit={handleSubmit}>
+      <h3><strong>Schedule a New Appointment:</strong></h3>
+      <form className="FormParent" onSubmit={handleSubmit}>
         <input
+          className="FormChild"
           onChange={handleChange}
           type="text"
           name="client"
@@ -64,6 +64,7 @@ function Form({ onSubmit, barbers, hairstyles }) {
           value={form.client}
         />
         <select
+          className="FormChild"
           onChange={handleChange}
           name="barber"
           value={form.barber}
@@ -73,6 +74,7 @@ function Form({ onSubmit, barbers, hairstyles }) {
         </select>
 
         <select
+          className="FormChild"
           onChange={handleChange}
           name="hairstyle"
           value={form.hairstyle}
@@ -81,13 +83,14 @@ function Form({ onSubmit, barbers, hairstyles }) {
           {hairstyleOptions}
         </select>
         <input
+          className="FormChild"
           onChange={handleChange}
           type="datetime-local"
           name="datetime"
           placeholder="Enter Time"
           value={form.datetime}
         />
-        <button type="submit">Complete Appointment</button>
+        <button className="FormSubmitButton" type="submit">Complete Appointment</button>
       </form><br />
     </div>
   )

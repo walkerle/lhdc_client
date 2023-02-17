@@ -12,8 +12,8 @@ function Appointments({ appts, onDelete, onEditClick }) {
   return (
     <div>
       <h3><strong>Schedule of Appointments</strong></h3>
-      <table>
-        <tbody>
+      <table className="ApptsParent">
+        <tbody className="ApptsChild">
           <tr>
             <th>Client Name</th>
             <th>Barber</th>

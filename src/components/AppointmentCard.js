@@ -38,11 +38,11 @@ function AppointmentCard({ appt, onDelete, onEditClick }) {
       <td>{appt.hairstyle.name}</td>
       <td>{appt.datetime}</td>
       <td>
-        <button onClick={handleDelete}>X</button>
+        <button className="FormDeleteButton" onClick={handleDelete}>X</button>
       </td>
       <td>
         <Link to={`/appointments/${appt.id}/edit`}>
-          <button onClick={handleEdit}>Change Appointment</button>
+          <button className="FormChangeButton" onClick={handleEdit}>Change Appointment</button>
         </Link>
       </td>
     </tr>

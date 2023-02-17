@@ -4,11 +4,11 @@ function HairstyleDesc({ hairstyle }) {
   
   return (
     <tr>
-      <td><img src={hairstyle.picture} alt={hairstyle.name} /></td>
-      <td>{hairstyle.name}</td>
-      <td>{hairstyle.price}</td>
-      <td>{hairstyle.duration}</td>
-      <td>{hairstyle.description}</td>
+      <td className="tabledata"><img src={hairstyle.picture} alt={hairstyle.name} /></td>
+      <td className="tabledata">{hairstyle.name}</td>
+      <td className="tabledata">{hairstyle.price}</td>
+      <td className="tabledata">{hairstyle.duration}</td>
+      <td className="tabledata">{hairstyle.description}</td>
     </tr>
   )
 }

@@ -12,8 +12,8 @@ function Clients ({ clients }) {
   return (
     <div>
       <h3><strong>Client Profiles</strong></h3>
-      <table>
-        <tbody>
+      <table className="ClientsParent">
+        <tbody className="ClientsChild">
           <tr>
             <th>Client Name</th>
           </tr>

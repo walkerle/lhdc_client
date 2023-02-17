@@ -12,12 +12,11 @@ function Barbers({ barbers }) {
   return (
     <div>
       <h3><strong>Barber Profiles</strong></h3>
-      <table>
-        <tbody>
+      <table className="tablecenter">
+        <tbody className="BarbersParent">
           <tr>
-            <th>Barber Name</th>
-          </tr>
           {barbersList}
+          </tr>
         </tbody>
       </table>
     </div>

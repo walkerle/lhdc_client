@@ -12,14 +12,14 @@ function Hairstyles({ hairstyles }) {
   return (
     <div>
       <h3><strong>Types of Hairstyles</strong></h3>
-      <table>
+      <table className="HairstylesParent">
         <tbody>
           <tr>
-            <th>Example</th>
-            <th>Name</th>
-            <th>Price ($)</th>
-            <th>Duration (min)</th>
-            <th>Description</th>
+            <th className="tableheader">Example</th>
+            <th className="tableheader">Name</th>
+            <th className="tableheader">Price ($)</th>
+            <th className="tableheader">Duration (min)</th>
+            <th className="tableheader">Description</th>
           </tr>
           {hairstylesList}
         </tbody>

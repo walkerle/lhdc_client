@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, /* useRef */ } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Appointments from './Appointments';
@@ -17,6 +17,8 @@ function Header() {
   const [barbers, setBarbers] = useState([]) // barbers array
   const [hairstyles, setHairstyles] = useState([]) // hairstyles array
   const [editAppt, setEditAppt] = useState([]) // edit appointment
+
+  // const [playing, setPlaying] = useState(false) // working on sound
 
   useEffect(() => { // GET
     fetch(`${baseUrl}/appointments`)
@@ -42,6 +44,17 @@ function Header() {
     .then(data => setHairstyles(data))
   }, [])
 
+  // function playSound(soundFilepath) { // working on sound
+  //   const audio = useRef(new Audio(soundFilepath))
+  //   if(!playing) {
+  //     audio.current.play();
+  //     audio.current.loop = false;
+  //   } else {
+  //     audio.current.pause();
+  //   }
+  //   setPlaying(!playing);
+  // }
+
   function onSubmit(formObj) { // POST
     // console.log(formObj)
 
@@ -57,7 +70,11 @@ function Header() {
       // if fetch POST located in Header.js  
       fetch(`${baseUrl}/appointments`, config)
       .then(res => res.json())
-      .then(data => setAppts([...appts, data]))
+      .then(data => {
+        setAppts([...appts, data])
+        // console.log(data.hairstyle.soundclip) // working on sound
+        // playSound(data.hairstyle.soundclip) // working on sound
+      })
   
       // if fetch POST located in Form.js
       // setAppts([...appts, formObj])

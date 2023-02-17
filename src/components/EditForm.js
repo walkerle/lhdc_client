@@ -54,10 +54,10 @@ function EditForm({ editAppt, onEditFormSubmit, barbers, hairstyles }) {
 
   return (
     <div>
-      <h3><strong>EditForm React Component:</strong></h3>
-      <div>Change appointment:</div>
-      <form onSubmit={handleSubmit}>
+      <h3><strong>Change Appointment:</strong></h3>
+      <form className="FormParent" onSubmit={handleSubmit}>
         <input
+          className="FormChild"
           type="text"
           name="client"
           placeholder="Enter Name"
@@ -65,6 +65,7 @@ function EditForm({ editAppt, onEditFormSubmit, barbers, hairstyles }) {
           readOnly
         />
         <select
+          className="FormChild"
           onChange={handleChange}
           name="barber"
           value={form.barber}
@@ -74,6 +75,7 @@ function EditForm({ editAppt, onEditFormSubmit, barbers, hairstyles }) {
         </select>
 
         <select
+          className="FormChild"
           onChange={handleChange}
           name="hairstyle"
           value={form.hairstyle}
@@ -82,13 +84,14 @@ function EditForm({ editAppt, onEditFormSubmit, barbers, hairstyles }) {
           {hairstyleOptions}
         </select>
         <input
+          className="FormChild"
           onChange={handleChange}
           type="datetime-local"
           name="datetime"
           placeholder="Enter Time"
           value={form.datetime}
         />
-        <button type="submit">Complete Appointment Change</button>
+        <button className="FormSubmitButton" type="submit">Complete Appointment Change</button>
       </form><br />
     </div>
   )

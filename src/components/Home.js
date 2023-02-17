@@ -3,9 +3,8 @@ import React from 'react';
 function Home() {
   
   return (
-    <div>
-      <h3><strong>Home React Component:</strong></h3>
-      Welcome to Long Hair Don't Care Barbershop!
+    <div className="HomeParent">
+      <h2 className="HomeChild"><strong>Welcome to Long Hair Don't Care Barbershop!</strong></h2>
     </div>
   )
 }
