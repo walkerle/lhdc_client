@@ -15,21 +15,11 @@ function Hairstyles({ hairstyles }) {
       <table>
         <tbody>
           <tr>
-            <th>
-              Example
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Price ($)
-            </th>
-            <th>
-              Duration (min)
-            </th>
-            <th>
-              Description
-            </th>
+            <th>Example</th>
+            <th>Name</th>
+            <th>Price ($)</th>
+            <th>Duration (min)</th>
+            <th>Description</th>
           </tr>
           {hairstylesList}
         </tbody>

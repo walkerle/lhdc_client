@@ -15,9 +15,7 @@ function Barbers({ barbers }) {
       <table>
         <tbody>
           <tr>
-            <th>
-              Barber Name
-            </th>
+            <th>Barber Name</th>
           </tr>
           {barbersList}
         </tbody>

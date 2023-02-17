@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function Form({ onSubmit, barbers, hairstyles }) {
+function EditForm({ editAppt, onEditFormSubmit, barbers, hairstyles }) {
 
   const initialForm = {
     client: "",
@@ -9,11 +9,22 @@ function Form({ onSubmit, barbers, hairstyles }) {
     hairstyle: "",
     datetime: ""
   }
-  // how to handle a new client w/ id and appointment at the same time?
 
   const [form, setForm] = useState(initialForm);
 
   const history = useHistory();
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/appointments/${editAppt.id}`)
+    .then(res => res.json())
+    .then(apptObj => setForm({
+      id: apptObj.id,
+      client: apptObj.client.name,
+      barber: apptObj.barber.name,
+      hairstyle: apptObj.hairstyle.name,
+      datetime: apptObj.datetime
+    }))
+  }, [editAppt])
 
   function handleChange(e) { // making a controlled form
     setForm({...form, [e.target.name]: e.target.value})
@@ -22,20 +33,9 @@ function Form({ onSubmit, barbers, hairstyles }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // if fetch POST located in Header.js
-    onSubmit(form);
+    // if fetch PATCH located in Header.js
+    onEditFormSubmit(form);
     history.push(`/appointments`);
-
-    // if fetch POST located in Form.js
-    // const config = {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(form)
-    // }
-
-    // fetch(`http://localhost:9292/appointments`, config)
-    // .then(res => res.json())
-    // .then(data => onSubmit(data))
 
     setForm(initialForm);
   }
@@ -51,17 +51,18 @@ function Form({ onSubmit, barbers, hairstyles }) {
       <option value={hairstyle.name} key={hairstyle.id}>{hairstyle.name}</option>
     )
   })
-    
+
   return (
     <div>
-      <h3><strong>Schedule a new appointment:</strong></h3>
+      <h3><strong>EditForm React Component:</strong></h3>
+      <div>Change appointment:</div>
       <form onSubmit={handleSubmit}>
         <input
-          onChange={handleChange}
           type="text"
           name="client"
           placeholder="Enter Name"
           value={form.client}
+          readOnly
         />
         <select
           onChange={handleChange}
@@ -87,10 +88,10 @@ function Form({ onSubmit, barbers, hairstyles }) {
           placeholder="Enter Time"
           value={form.datetime}
         />
-        <button type="submit">Complete Appointment</button>
+        <button type="submit">Complete Appointment Change</button>
       </form><br />
     </div>
   )
 }
 
-export default Form;
+export default EditForm;

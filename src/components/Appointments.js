@@ -1,11 +1,11 @@
 import React from 'react';
 import AppointmentCard from './AppointmentCard';
 
-function Appointments({ appts }) {
+function Appointments({ appts, onDelete, onEditClick }) {
 
   const appointmentsList = appts.map(appt => {
     return (
-      <AppointmentCard key={appt.id} appt={appt} />
+      <AppointmentCard key={appt.id} appt={appt} onDelete={onDelete} onEditClick={onEditClick} />
     )
   })
   
@@ -15,24 +15,12 @@ function Appointments({ appts }) {
       <table>
         <tbody>
           <tr>
-            <th>
-              Client Name
-            </th>
-            <th>
-              Barber
-            </th>
-            <th>
-              Haircut
-            </th>
-            <th>
-              Appointment Date
-            </th>
-            <th>
-              Cancel Appointment
-            </th>
-            <th>
-              Change Appointment
-            </th>
+            <th>Client Name</th>
+            <th>Barber</th>
+            <th>Haircut</th>
+            <th>Appointment Date</th>
+            <th>Cancel Appointment</th>
+            <th>Change Appointment</th>
           </tr>
           {appointmentsList}
         </tbody>
